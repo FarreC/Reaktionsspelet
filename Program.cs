@@ -10,7 +10,7 @@ namespace ReaktionSpel
         {     
 
             Random rand = new Random();
-            var testRandom = rand.Next(3000, 10000); 
+            var randomTimer = rand.Next(3000, 10000); 
             var timer = new Stopwatch();
             var endTimer = new Stopwatch();
             
@@ -21,7 +21,7 @@ namespace ReaktionSpel
                 while(!Console.KeyAvailable)
                 {
                     
-                    if(timer.ElapsedMilliseconds == testRandom)
+                    if(timer.ElapsedMilliseconds == randomTimer)
                     {
                         Console.WriteLine("NOW!");
                         endTimer.Start();
@@ -31,7 +31,7 @@ namespace ReaktionSpel
                 endTimer.Stop();
                 timer.Stop();
                 
-                if(timer.ElapsedMilliseconds > testRandom)
+                if(timer.ElapsedMilliseconds > randomTimer)
                 {  
                     Console.WriteLine("Din tid är {0} ms", endTimer.ElapsedMilliseconds);
 
